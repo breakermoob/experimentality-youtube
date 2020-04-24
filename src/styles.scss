@@ -1,1 +1,69 @@
-/* You can add global styles to this file, and also import other style files */
+$green: #1abc9c;
+$light-green: #a1cb00;
+$gray: #333333;
+
+body{
+   margin: 0;
+   padding: 0;
+}
+
+.navbar{
+   background-color: $gray;
+   position: fixed;
+   top: 0;
+   z-index: 1;
+   width: 100%;
+   .navbar__container{
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      margin: 0.5rem;
+      .navbar__container__logo img{
+         margin: 0.5rem;
+      }
+      .navbar__container__search-bar input[type=text]{
+         height: 2rem;
+         width: 40vw;
+         font-size: 2rem;
+      }
+   }
+}
+
+.list{
+   margin-top: 8rem;
+   .list__slider{
+      display: grid;
+      grid-template-columns: repeat(6,1fr);
+      align-items: center;
+      justify-items: center;
+      .list__slider__card{
+         background-color: $light-green;
+         width: 15vw;
+         height: 9vw;
+      }
+   }
+}
+
+.main{
+   margin-top: 3rem;
+   .main__video{
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      align-items: center;
+      justify-items: center;
+      .main__video__frame{
+         background-color: $green;
+         width: 45vw;
+         height: 25vw;
+      }
+      .main__video__description{
+         background-color: $green;
+         width: 45vw;
+         height: 25vw;
+      }
+   }
+}
+
+@media screen and (max-width:1024px){
+
+}

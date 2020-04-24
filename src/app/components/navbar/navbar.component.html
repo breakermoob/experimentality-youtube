@@ -1,0 +1,10 @@
+<nav class="navbar">
+   <div class="navbar__container">
+      <div class="navbar__container__logo">
+         <img src="assets/logo-neg-min.png" alt="logo">
+      </div>
+      <div class="navbar__container__search-bar">
+         <input type="text" [(ngModel)]="search_string" (keydown)="onKeydown($event)">
+      </div>
+   </div>
+</nav>
