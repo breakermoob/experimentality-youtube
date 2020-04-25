@@ -55,6 +55,10 @@ body{
          background-color: $green;
          width: 45vw;
          height: 25vw;
+         .youtube__frame{
+            width: 100%;
+            height: 100%;
+         }
       }
       .main__video__description{
          background-color: $green;
