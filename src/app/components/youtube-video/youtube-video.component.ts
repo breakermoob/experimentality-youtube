@@ -26,7 +26,7 @@ export class YoutubeVideoComponent implements OnChanges {
 
 
   constructor() {
-    this.video = 'pAgnJDJN4VA';
+    this.video = 'MUYU5x3Nqkk';
     this.init();
   }
 

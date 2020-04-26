@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
   constructor(private youtubeApi: YoutubeAPIService) { }
 
   ngOnInit() {
-    this.searchByString('ac dc');
+    this.searchByString('letal crysis');
   }
 
   onKeydown(event) {

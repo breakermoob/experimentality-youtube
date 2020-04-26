@@ -8,17 +8,16 @@ import { Observable } from 'rxjs';
 })
 export class YoutubeAPIService {
 
-  apiKey: string = 'AIzaSyCYvu1uYNFgjLM0Fj3UAShXBa01ZzcvQt0';
+  apiKey: string = 'AIzaSyCmz1vmq-F3WLroaQh0h9CYYiPVD0nn25Y';
   apiUrl: string = 'https://www.googleapis.com/youtube/v3/search'
   youtube_list:any;
 
   constructor(public http: HttpClient) { }
 
   getVideosForString(query): Observable<Object> { 
-    let url = `${this.apiUrl}?key=${this.apiKey}&q=${query}&part=snippet&maxResults=6&origin${window.location.origin}`
+    let url = `${this.apiUrl}?key=${this.apiKey}&q=${query}&part=snippet&maxResults=6&origin${window.location.origin}&type=video`
     return this.http.get(url)
       .pipe(map((res) => {
-        console.log("Holi")
         return res;
       }))
   }

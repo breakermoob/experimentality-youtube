@@ -2,6 +2,7 @@
    <div class="list__slider">
       <div class="list__slider__card" (click)="setMainVideo(card)" *ngFor="let card of videos">
          <img [src]="card.snippet.thumbnails.medium.url" alt="">
+         <h5>{{card.snippet.title}}</h5>
       </div>
    </div>
 </section>
