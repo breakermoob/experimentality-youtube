@@ -11,6 +11,7 @@ export class YoutubeVideoComponent implements OnChanges {
   @Input() mainVideo: {
     title: string,
     description: string,
+    channelTitle:string
   };
   @Input() mainId: string;
 
