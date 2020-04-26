@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class YoutubeAPIService {
 
-  apiKey: string = 'AIzaSyCmz1vmq-F3WLroaQh0h9CYYiPVD0nn25Y';
+  apiKey: string = 'AIzaSyCMLGuyKt0ebYRYeJm49-yyo8dLFxQ0ffQ';
   apiUrl: string = 'https://www.googleapis.com/youtube/v3/search'
   youtube_list:any;
 
