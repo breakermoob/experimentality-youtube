@@ -1,12 +1,9 @@
 <section class="list">
    <div class="list__slider">
-      <div class="list__slider__card">
-         
+      <div class="list__slider__card" (click)="setMainVideo(card)" *ngFor="let card of videos">
+         <img [src]="card.snippet.thumbnails.medium.url" alt="">
       </div>
-      <div class="list__slider__card"></div>
-      <div class="list__slider__card"></div>
-      <div class="list__slider__card"></div>
-      <div class="list__slider__card"></div>
-      <div class="list__slider__card"></div>
    </div>
 </section>
+
+<app-youtube-video [mainId]="mainId" [mainVideo]="mainVideo"></app-youtube-video>

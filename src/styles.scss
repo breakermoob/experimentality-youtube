@@ -14,20 +14,55 @@ body{
    top: 0;
    z-index: 1;
    width: 100%;
+   transition: background-color 2s ease;
    .navbar__container{
       display: grid;
-      grid-template-columns: 1fr auto;
+      grid-template-columns: auto 1fr auto;
       align-items: center;
       margin: 0.5rem;
       .navbar__container__logo img{
          margin: 0.5rem;
       }
-      .navbar__container__search-bar input[type=text]{
-         height: 2rem;
-         width: 40vw;
-         font-size: 2rem;
+      .navbar__container__name{
+         color: white;
+         padding-left: 1em;
+      }
+      .navbar__container__search-bar {
+         display: flex;
+         flex-direction: row;
+         justify-content: center;
+         padding-right: 3em;
+
+         input[type=text]{
+            width: 40vw;
+            height: 2rem;
+            font-size: 1.2rem;
+            box-shadow: none;
+            border: 0;
+         }
+         button{
+            background-color: white;
+            color: $gray;
+            width: 2rem;
+            border: 1px solid white;
+            transition: all 1s ease;
+         }
+         button:hover{
+            background-color: $gray;
+            color: white;
+            width: 2rem;
+            border: 2px solid $gray;
+         }
       }
    }
+   .navbar__container:hover > .navbar__container__name{
+      color: $gray;
+      padding-left: 1em;
+   }
+}
+
+.navbar:hover{
+   background-color: $light-green;
 }
 
 .list{
@@ -35,25 +70,34 @@ body{
    .list__slider{
       display: grid;
       grid-template-columns: repeat(6,1fr);
+      flex-direction: row-reverse;
       align-items: center;
       justify-items: center;
       .list__slider__card{
-         background-color: $light-green;
          width: 15vw;
          height: 9vw;
+         img {
+            width: 100%;
+            height: 100%;
+         }
       }
+      .list__slider__card:nth-of-type(1) {
+         order: 6;
+       }
+      .list__slider__card:nth-of-type(6) {
+         order: 1;
+       }
    }
 }
 
 .main{
-   margin-top: 3rem;
+   margin-top: 6rem;
    .main__video{
       display: grid;
       grid-template-columns: repeat(2,1fr);
       align-items: center;
       justify-items: center;
       .main__video__frame{
-         background-color: $green;
          width: 45vw;
          height: 25vw;
          .youtube__frame{
@@ -64,23 +108,49 @@ body{
       .main__video__description{
          width: auto;
          height: 25vw;
-         padding: 3em;
-         margin: 3em;
+         word-wrap: break-word;
          h2{
+            padding-top: 0;
+            margin-top: 0;
+            font-size: 2rem;
             font-weight: 700;
          }
-         p{
+         h5{
             font-weight: 300;
+         }
+         p{
+            font-size: 1.5rem;
+            font-weight: 400;
          }
       }
    }
 }
 
 
-@media screen and (max-width:1024px){
+@media screen and (max-width:767px){
+
+   .navbar{
+      .navbar__container{
+         margin: 1rem;
+         .navbar__container__logo img{
+            width: 50%;
+         }
+         .navbar__container__name{ 
+            display: none;
+         }
+         .navbar__container__search-bar{
+            padding-right: 0;
+            input[type=text]{
+               height: 1.5rem;
+               width: 60vw;
+               font-size: 1rem;
+            }
+         }
+      }
+   }
 
    .main{
-      margin-top: 3rem;
+      margin-top: 4rem;
       .main__video{
          display: flex;
          flex-direction: column;
@@ -98,15 +168,28 @@ body{
             height: 50vh;
             padding: 0;
             margin: 0;
-            margin-top: 1rem;
+            margin-top: 2rem;
+            word-wrap: break-word;
+            h2{
+               font-size: 1.5rem;
+               font-weight: 700;
+            }
+            h5{
+               font-size: 0.5rem;
+               font-weight: 300;
+            }
+            p{
+               font-size: 1rem;
+               font-weight: 400;
+            }
          }
       }
    }
 
    .list{
-      margin-top: 7rem;
-      margin-left: 2rem;
-      margin-right: 2rem;
+      margin-top: 9rem;
+      margin-left: 1.4rem;
+      margin-right: 1.4rem;
       .list__slider{
          display: grid;
          grid-template-columns: repeat(6, 45vw);

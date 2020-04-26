@@ -8,10 +8,11 @@ import { Component, OnChanges, SimpleChanges, Input } from '@angular/core';
 })
 export class YoutubeVideoComponent implements OnChanges {
 
-  @Input() title: String;
-  @Input() id: String;
-  @Input() description: String;
-  // changes.id.currentValue
+  @Input() mainVideo: {
+    title: string,
+    description: string,
+  };
+  @Input() mainId: string;
 
   /* YT API Vars*/
   public YT: any;
@@ -24,6 +25,7 @@ export class YoutubeVideoComponent implements OnChanges {
 
 
   constructor() {
+    this.video = 'pAgnJDJN4VA';
     this.init();
   }
 
@@ -40,15 +42,12 @@ export class YoutubeVideoComponent implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes.id.currentValue) {
+    if (changes.mainId.currentValue) {
       try {
-        this.player.loadVideoById(changes.id.currentValue);
+        this.player.loadVideoById(changes.mainId.currentValue);
       } catch (e) { }
     }
   }
-
-
-
 
   startVideo() {
     this.reframed = false;
@@ -57,13 +56,13 @@ export class YoutubeVideoComponent implements OnChanges {
       playerVars: {
         autoplay: 0,
         modestbranding: 1,
+        origin: window.location.origin,
         controls: 1,
         disablekb: 1,
         rel: 0,
         showinfo: 0,
         fs: 0,
         playsinline: 1
-
       },
       events: {
         'onStateChange': this.onPlayerStateChange.bind(this),
@@ -72,7 +71,6 @@ export class YoutubeVideoComponent implements OnChanges {
     });
   }
 
-  /* 5. API will call this function when Player State changes like PLAYING, PAUSED, ENDED */
   onPlayerStateChange(event) {
     switch (event.data) {
       case window['YT'].PlayerState.PLAYING:
