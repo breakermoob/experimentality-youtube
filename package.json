@@ -3,22 +3,27 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js | ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
+    "postinstall": "ng build --aot --prod",
     "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/build-angular": "~0.803.6",
     "@angular/animations": "~8.2.8",
+    "@angular/cli": "~8.3.6",
     "@angular/common": "~8.2.8",
     "@angular/compiler": "~8.2.8",
+    "@angular/compiler-cli": "~8.2.8",
     "@angular/core": "~8.2.8",
     "@angular/forms": "~8.2.8",
     "@angular/platform-browser": "~8.2.8",
     "@angular/platform-browser-dynamic": "~8.2.8",
     "@angular/router": "~8.2.8",
+    "@angular/youtube-player": "^9.2.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

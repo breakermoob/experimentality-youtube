@@ -10,6 +10,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { YoutubeListComponent } from './components/youtube-list/youtube-list.component';
 import { YoutubeVideoComponent } from './components/youtube-video/youtube-video.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { YoutubeVideoComponent } from './components/youtube-video/youtube-video.
     NavbarComponent,
     HomeComponent,
     YoutubeListComponent,
-    YoutubeVideoComponent
+    YoutubeVideoComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
